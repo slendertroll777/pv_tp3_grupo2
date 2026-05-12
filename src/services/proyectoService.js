@@ -33,3 +33,17 @@ let proyectos = [
     }
 ];
 })();
+
+const obtenerProyectos = () => {
+    return [...proyectos];
+};
+
+const agregarProyecto = (nuevoProyecto) => {
+    proyectos.push(nuevoProyecto);
+};
+
+const eliminarProyecto = (id) => {
+    proyectos = proyectos.filter(
+        proyecto => proyecto.id !== id
+    );
+};
