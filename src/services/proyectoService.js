@@ -61,3 +61,6 @@ const proyectoService = (() => {
         eliminarProyecto,
         buscarProyecto
     };
+})();
+
+export default proyectoService;
