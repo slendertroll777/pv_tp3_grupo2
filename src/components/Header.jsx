@@ -1,4 +1,6 @@
 import '/src/assets/css/header.css';
+import Nav from "./Nav";
+
 const Header = () => {
   return (
     <header>
