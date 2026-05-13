@@ -4,3 +4,7 @@ header{
                 justify-content: space-between;
                 font-family: sans-serif;
 }
+header h1{
+                color: black;
+                margin-left: 20px;
+}
