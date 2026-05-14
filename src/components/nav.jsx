@@ -1,5 +1,5 @@
 import '/src/assets/css/nav.css';
-function Nav() {
+const Nav = () => {
   return (
     <nav>
       <a href="#">Inicio</a>
