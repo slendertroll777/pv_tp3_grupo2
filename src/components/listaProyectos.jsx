@@ -56,7 +56,7 @@ setNuevoProyecto({ titulo: "", categoria: "", estado: "Pendiente" });
     
  
 return (
-<div>
+<div className="cuerpo">
             <h1>Lista de Proyectos</h1>
             <div>
     <h2>Agregar Proyecto</h2>
