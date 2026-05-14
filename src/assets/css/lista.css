@@ -34,7 +34,7 @@
 .cuerpo > div:first-of-type h2 {
   margin: 0;
   font-size: 1.4rem;
-  color: var(--text-h);
+  color: gray;
 }
 
 .cuerpo > div:first-of-type input,
