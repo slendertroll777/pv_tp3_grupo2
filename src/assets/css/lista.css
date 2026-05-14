@@ -1,0 +1,164 @@
+.cuerpo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 1.5rem 3rem;
+  box-sizing: border-box;
+  gap: 1.5rem;
+  font-family: var(--sans);
+  background: radial-gradient(circle at top, rgba(170, 59, 255, 0.08), transparent 34%),
+    rgba(248, 245, 255, 0.95);
+}
+
+.cuerpo h1 {
+  margin: 0;
+  font-size: clamp(2rem, 2.3vw, 2.7rem);
+  color: var(--text-h);
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
+.cuerpo > div:first-of-type {
+  width: min(1080px, 100%);
+  display: grid;
+  gap: 1.2rem;
+  padding: 2rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(170, 59, 255, 0.14);
+  box-shadow: 0 28px 48px rgba(113, 64, 184, 0.08);
+}
+
+.cuerpo > div:first-of-type h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text-h);
+}
+
+.cuerpo > div:first-of-type input,
+.cuerpo > div:first-of-type select {
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(99, 93, 123, 0.18);
+  background: #fefaff;
+  color: var(--text-h);
+  font-size: 0.98rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cuerpo > div:first-of-type input:focus,
+.cuerpo > div:first-of-type select:focus {
+  border-color: rgba(170, 59, 255, 0.45);
+  box-shadow: 0 0 0 4px rgba(170, 59, 255, 0.1);
+}
+
+.cuerpo > div:first-of-type button {
+  width: fit-content;
+  padding: 0.95rem 1.6rem;
+  margin-top: 0.3rem;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--accent), #8351ff);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 16px 32px rgba(170, 59, 255, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cuerpo > div:first-of-type button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 34px rgba(170, 59, 255, 0.2);
+}
+
+.cuerpo > input[type="text"] {
+  width: min(680px, 100%);
+  padding: 1rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(170, 59, 255, 0.22);
+  background: rgba(170, 59, 255, 0.08);
+  color: var(--text-h);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cuerpo > input[type="text"]:focus {
+  border-color: rgba(170, 59, 255, 0.45);
+  box-shadow: 0 0 0 4px rgba(170, 59, 255, 0.1);
+}
+
+.cuerpo > div:last-child {
+  width: min(1080px, 100%);
+  display: grid;
+  gap: 1rem;
+}
+
+.cuerpo > div:last-child > div {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.4rem 1.6rem;
+  border-radius: 24px;
+  border: 1px solid rgba(170, 59, 255, 0.12);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 40px rgba(113, 64, 184, 0.08);
+}
+
+.cuerpo > div:last-child > div h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--text-h);
+}
+
+.cuerpo > div:last-child > div p {
+  margin: 0;
+  color: var(--text);
+  opacity: 0.88;
+}
+
+.cuerpo > div:last-child > div button {
+  width: fit-content;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid rgba(255, 89, 142, 0.3);
+  border-radius: 16px;
+  background: rgba(255, 89, 142, 0.1);
+  color: #8b2f64;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.cuerpo > div:last-child > div button:hover {
+  opacity: 0.95;
+}
+
+.cuerpo p {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .cuerpo {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .cuerpo > div:first-of-type,
+  .cuerpo > div:last-child {
+    padding: 1.5rem;
+  }
+
+  .cuerpo > div:first-of-type,
+  .cuerpo > div:last-child > div {
+    border-radius: 22px;
+  }
+
+  .cuerpo > div:first-of-type input,
+  .cuerpo > div:first-of-type select,
+  .cuerpo > input[type="text"] {
+    min-height: 3rem;
+  }
+}
