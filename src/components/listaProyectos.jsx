@@ -1,9 +1,8 @@
 import { useState } from "react";
 import proyectoService from "../services/proyectoService";
-import '../css/lista.css';
-import '../css/nav.css';
-import '../css/header.css';
-import '../css/lista.css';
+import '../assets/css/nav.css';
+import '../assets/css/header.css';
+import '../assets/css/lista.css';
  
 function ListaProyectos() {
     //obtenerProyectos()
