@@ -1,13 +1,23 @@
 import { useState } from "react";
 import proyectoService from "../services/proyectoService";
+import '../css/lista.css';
+import '../css/nav.css';
+import '../css/header.css';
+import '../css/lista.css';
  
 function ListaProyectos() {
     //obtenerProyectos()
 const [proyectos, setProyectos] = useState(
         proyectoService.obtenerProyectos()
     );
-    //busqueda
+//busqueda
 const [busqueda, setBusqueda] = useState("");
+//para el agregar
+const [nuevoProyecto, setNuevoProyecto] = useState({
+    titulo: "",
+    categoria: "",
+    estado: "Pendiente"
+});
  
     //tiempo real
 const handleBusqueda = (e) => {
@@ -20,16 +30,61 @@ const handleEliminar = (id) => {
         proyectoService.eliminarProyecto(id);
         setProyectos(proyectoService.obtenerProyectos());
     };
+const handleCambio = (e) => {
+const { name, value } = e.target;
+    setNuevoProyecto({
+    ...nuevoProyecto,
+    [name]: value
+    });
+};
 
+const handleAgregar = () => {
+if (nuevoProyecto.titulo.trim() === "" || nuevoProyecto.categoria.trim() === "") {
+        alert("Completa el título y la categoria.");
+        return;
+    }
+const proyecto = {
+        id: Date.now(),
+        titulo: nuevoProyecto.titulo,
+        categoria: nuevoProyecto.categoria,
+        estado: nuevoProyecto.estado
+    };
+proyectoService.agregarProyecto(proyecto);
+setProyectos(proyectoService.obtenerProyectos());
+setNuevoProyecto({ titulo: "", categoria: "", estado: "Pendiente" });
+};
 
     
  
 return (
 <div>
             <h1>Lista de Proyectos</h1>
+            <div>
+    <h2>Agregar Proyecto</h2>
+<input
+        type="text"
+        name="titulo"
+        placeholder="Título del proyecto"
+        value={nuevoProyecto.titulo}
+        onChange={handleCambio}
+    />
+<input
+        type="text"
+        name="categoria"
+        placeholder="Categoría"
+        value={nuevoProyecto.categoria}
+        onChange={handleCambio}
+    />
+<select name="estado" value={nuevoProyecto.estado} onChange={handleCambio}>
+        <option value="Pendiente">Pendiente</option>
+        <option value="En progreso">En progreso</option>
+        <option value="Completado">Completado</option>
+</select>
+    <button onClick={handleAgregar}>Agregar Proyecto</button>
+</div>
  
             
-     <input
+    <input
             type="text"
             placeholder="Buscar proyecto..."
             value={busqueda}
