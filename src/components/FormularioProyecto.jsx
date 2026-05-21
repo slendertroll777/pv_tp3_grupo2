@@ -1,13 +1,5 @@
 function FormularioProyecto({ nuevoProyecto, handleCambio, handleAgregar }) {
-<<<<<<< Updated upstream
-import "../assets/css/formulario.css"
-=======
-<<<<<<< HEAD
-    
-=======
-import "../assets/css/formulario.css"
->>>>>>> angulo
->>>>>>> Stashed changes
+import "../assets/css/formulario.css";
     const { 
         titulo, 
         categoria, 
