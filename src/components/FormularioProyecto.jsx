@@ -1,5 +1,5 @@
 function FormularioProyecto({ nuevoProyecto, handleCambio, handleAgregar }) {
-    
+import "../assets/css/formulario.css";
     const { 
         titulo, 
         categoria, 
