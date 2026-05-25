@@ -6,6 +6,7 @@ import DetalleProyecto from "./DetalleProyecto";
 import '../assets/css/nav.css';
 import '../assets/css/header.css';
 import '../assets/css/lista.css';
+import RegistroActividad from "./RegistroActividad";
 
 function ListaProyectos() {
     const [proyectos, setProyectos] = useState(
