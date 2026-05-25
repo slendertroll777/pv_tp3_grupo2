@@ -1,4 +1,4 @@
-function RegistroActividad(fecha) {
+function RegistroActividad({ fecha }) {
 
     let dia = fecha.toLocaleDateString();
     let hora = fecha.toLocaleTimeString();

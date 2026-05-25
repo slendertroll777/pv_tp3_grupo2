@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import proyectoService from "../services/proyectoService";
 import ProyectoCard from "./ProyectoCard"; 
 import FormularioProyecto from "./FormularioProyecto"; 
@@ -6,6 +6,7 @@ import DetalleProyecto from "./DetalleProyecto";
 import '../assets/css/nav.css';
 import '../assets/css/header.css';
 import '../assets/css/lista.css';
+import RegistroActividad from "./RegistroActividad";
 
 function ListaProyectos() {
     const [proyectos, setProyectos] = useState(
@@ -25,6 +26,8 @@ function ListaProyectos() {
 });
 
     const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null);
+
+    const primeraCarga = useRef(true);
 
     const handleBusqueda = (e) => {
         const texto = e.target.value;
@@ -89,6 +92,10 @@ function ListaProyectos() {
     });
 };
 
+    setTimeout(() => {
+        primeraCarga.current = false;
+    }, 1000);
+
     return (
         <div className="cuerpo" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             <h1>Lista de Proyectos</h1>
@@ -135,6 +142,11 @@ function ListaProyectos() {
                 )}
 
             </div>
+
+            {!primeraCarga.current && (
+                <RegistroActividad fecha={new Date()} />
+            )}
+
         </div>
     );
 }
