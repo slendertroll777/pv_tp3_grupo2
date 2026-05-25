@@ -136,6 +136,9 @@ function ListaProyectos() {
                 )}
 
             </div>
+
+            <RegistroActividad fecha={new Date()} />
+
         </div>
     );
 }
