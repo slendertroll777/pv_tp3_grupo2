@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import proyectoService from "../services/proyectoService";
 import ProyectoCard from "./ProyectoCard"; 
 import FormularioProyecto from "./FormularioProyecto"; 
@@ -26,6 +26,8 @@ function ListaProyectos() {
 });
 
     const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null);
+
+    const primeraCarga = useRef(true);
 
     const handleBusqueda = (e) => {
         const texto = e.target.value;
@@ -90,6 +92,10 @@ function ListaProyectos() {
     });
 };
 
+    setTimeout(() => {
+        primeraCarga.current = false;
+    }, 1000);
+
     return (
         <div className="cuerpo" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             <h1>Lista de Proyectos</h1>
@@ -137,7 +143,9 @@ function ListaProyectos() {
 
             </div>
 
-            <RegistroActividad fecha={new Date()} />
+            {!primeraCarga.current && (
+                <RegistroActividad fecha={new Date()} />
+            )}
 
         </div>
     );
