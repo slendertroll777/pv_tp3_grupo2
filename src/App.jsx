@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ListaProyectos from "./components/ListaProyectos";
-import dashboard from "./views/Dahsboard";
+import Dashboard from "./views/Dahsboard";
 import DetalleProyecto from "./views/DetalleProyecto";
 import perfilusuario from "./views/PerfilUsuario";
 
