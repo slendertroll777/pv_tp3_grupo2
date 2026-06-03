@@ -1,3 +1,4 @@
+import Alert from 'react-bootstrap/Alert';
 function RegistroActividad({ fecha }) {
 
     let dia = fecha.toLocaleDateString();
@@ -18,10 +19,13 @@ function RegistroActividad({ fecha }) {
         );
     };
     return (
-        <div>
-            <h3>Registro de Actividades</h3>
+        <Alert variant="info">
+            <Alert.Heading>
+                Registro de Actividades
+            </Alert.Heading>
+
             {control()}
-        </div>
+        </Alert>
     );
 }
 export default RegistroActividad;
