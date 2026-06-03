@@ -1,9 +1,9 @@
-import { Routes, Route } from "react-router-dom";
-
+import { Link, Outlet } from "react-router-dom";
+import routes from "./routes/routes";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ListaProyectos from "./components/ListaProyectos";
-import dashboard from "./views/Dahsboard";
+import Dashboard from "./views/Dahsboard";
 import DetalleProyecto from "./views/DetalleProyecto";
 import perfilusuario from "./views/PerfilUsuario";
 
@@ -13,23 +13,7 @@ function App() {
       <Header />
 
       <main>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-
-          <Route path="/dashboard" element={<Dashboard />} />
-
-          <Route path="/proyectos" element={<ListaProyectos />} />
-
-          <Route
-            path="/proyectos/:id"
-            element={<DetalleProyecto />}
-          />
-
-          <Route
-            path="/perfil"
-            element={<PerfilUsuario />}
-          />
-        </Routes>
+        <Outlet />
       </main>
 
       <Footer />
