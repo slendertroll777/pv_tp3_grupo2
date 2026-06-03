@@ -1,0 +1,25 @@
+.tarjeta-clientes {
+    width: 18rem;
+    border: 1px solid #dee2e6;
+}
+.imagen-cliente {
+    width: 286px;
+    height: 180px;
+    object-fit: fill;
+}
+.desplegable-clientes {
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
