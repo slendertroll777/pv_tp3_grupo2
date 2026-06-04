@@ -4,7 +4,6 @@ import Dashboard from "../views/Dashboard";
 import DetalleProyecto from "../views/DetalleProyecto";
 import PerfilUsuario from "../views/PerfilUsuario";
 import ErrorPage from "../views/ErrorPage";
-import ListaProyectos from "../components/ListaProyectos"; 
 
 const routes = createBrowserRouter([
   {
@@ -13,22 +12,16 @@ const routes = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "dashboard",
+        index: true, 
         element: <Dashboard />, 
-        children: [
-          {
-            index: true, 
-            element: <ListaProyectos />, 
-          },
-          {
-            path: "detalle-proyecto", 
-            element: <DetalleProyecto />,
-          },
-          {
-            path: "perfil-usuario", 
-            element: <PerfilUsuario />,
-          },
-        ],
+      },
+      {
+        path: "detalle-proyecto", 
+        element: <DetalleProyecto />,
+      },
+      {
+        path: "perfil-usuario", 
+        element: <PerfilUsuario />,
       },
     ],
   },
