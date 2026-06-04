@@ -2,11 +2,11 @@ import { useState, useRef, useEffect } from "react";
 import proyectoService from "../services/proyectoService";
 import ProyectoCard from "./ProyectoCard"; 
 import FormularioProyecto from "./FormularioProyecto"; 
-import DetalleProyecto from "./DetalleProyecto"; 
 import '../assets/css/nav.css';
 import '../assets/css/header.css';
 import '../assets/css/lista.css';
 import RegistroActividad from "./RegistroActividad"; 
+
 function ListaProyectos() {
     
     const [proyectos, setProyectos] = useState(
@@ -14,8 +14,6 @@ function ListaProyectos() {
     );
 
     const [busqueda, setBusqueda] = useState("");
-    
-    
     const [ultimaFecha, setUltimaFecha] = useState(null);
 
     const [nuevoProyecto, setNuevoProyecto] = useState({
@@ -28,8 +26,6 @@ function ListaProyectos() {
         liderNombre: ""   
     });
 
-    const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null);
-
     const esCargaInicial = useRef(true);
 
     useEffect(() => {
@@ -37,24 +33,18 @@ function ListaProyectos() {
             esCargaInicial.current = false;
             return; 
         }
-
         setUltimaFecha(new Date());
-
     }, [proyectos]); 
 
     const handleBusqueda = (e) => {
         const texto = e.target.value;
         setBusqueda(texto);
-    
         setProyectos(proyectoService.buscarProyecto(texto)); 
     };
 
     const handleEliminar = (id) => {
         proyectoService.eliminarProyecto(id); 
         setProyectos(proyectoService.obtenerProyectos());
-        if (proyectoSeleccionado?.id === id) {
-            setProyectoSeleccionado(null);
-        }
     };
 
     const handleCambio = (e) => {
@@ -132,23 +122,12 @@ function ListaProyectos() {
                                     key={proyecto.id}
                                     proyecto={proyecto} 
                                     onEliminar={handleEliminar} 
-                                    onVerDetalle={() => setProyectoSeleccionado(proyecto)} 
                                 />
                             ))}
                         </div>
                     )}
                 </div>
-
-                {proyectoSeleccionado && (
-                    <div style={{ flex: 1, border: "1px solid #000000", padding: "20px", borderRadius: "8px" }}>
-                        <DetalleProyecto 
-                            proyecto={proyectoSeleccionado}
-                            cerrar={() => setProyectoSeleccionado(null)}
-                        />
-                    </div>
-                )}
             </div>
-
         
             {ultimaFecha && (
                 <RegistroActividad fecha={ultimaFecha} />
