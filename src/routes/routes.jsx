@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Dashboard from "../views/Dashboard";
+import ListaProyectos from "../components/ListaProyectos";
 import DetalleProyecto from "../views/DetalleProyecto";
 import PerfilUsuario from "../views/PerfilUsuario";
 import ErrorPage from "../views/ErrorPage";
@@ -16,11 +17,15 @@ const routes = createBrowserRouter([
         element: <Dashboard />, 
       },
       {
-        path: "detalle-proyecto", 
+        path: "proyectos", 
+        element: <ListaProyectos />,
+      },
+      {
+        path: "proyectos/:id", 
         element: <DetalleProyecto />,
       },
       {
-        path: "perfil-usuario", 
+        path: "perfil", 
         element: <PerfilUsuario />,
       },
     ],

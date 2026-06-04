@@ -1,10 +1,21 @@
-const DetalleProyecto = ({ proyecto, cerrar }) => {
+import { useParams, Link } from "react-router-dom";
+import proyectoService from "../services/proyectoService";
+
+const DetalleProyecto = () => {
+   const { id } = useParams();
+   
+   const proyecto = proyectoService.obtenerProyectos().find(proj => proj.id === parseInt(id));
+
    if (!proyecto) {
-      return null;
+      return (
+         <div className="detalle">
+            <h2>Proyecto no encontrado</h2>
+            <Link to="/proyectos" className="btn btn-secondary">Volver a proyectos</Link>
+         </div>
+      );
    }
 
    const {
-      id,
       titulo,
       categoria,
       estado,
@@ -67,7 +78,7 @@ const DetalleProyecto = ({ proyecto, cerrar }) => {
             )}
          </section>
 
-         <button onClick={cerrar}>Cerrar</button>
+         <Link to="/proyectos" className="btn btn-secondary">Volver</Link>
       </div>
    );
 };
