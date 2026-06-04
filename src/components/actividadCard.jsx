@@ -11,7 +11,7 @@ function ActividadCard() {
                         Estas son las últimas actividades registradas en la plataforma:
                     <ul>
                         <li>
-                            <strong>Usuarios conectados: </strong> 2.
+                            <strong>Usuarios activos: </strong> 2.
                         </li>
                         <li>
                             <strong>Proyectos activos: </strong> 3.
@@ -21,12 +21,6 @@ function ActividadCard() {
                         </li>
                         <li>
                             <strong>Tiempo total de actividad: </strong> 22 horas.
-                        </li>
-                        <li>
-                            <strong>Ultimo nuevo proyecto: </strong> 12:30 A.M.
-                        </li>
-                        <li>
-                            <strong>Ultima eliminacion: </strong> 1:00 P.M.
                         </li>
                     </ul>
                 </Card.Text>
