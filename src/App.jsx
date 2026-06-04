@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import ListaProyectos from "./components/ListaProyectos";
 import Dashboard from "./views/Dashboard";
 import DetalleProyecto from "./views/DetalleProyecto";
-import perfilusuario from "./views/PerfilUsuario";
+import Perfilusuario from "./views/PerfilUsuario";
 
 function App() {
   return (
