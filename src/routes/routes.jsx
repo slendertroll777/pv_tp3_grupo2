@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Dashboard from "../views/Dahsboard";
+import Dashboard from "../views/Dashboard";
 import DetalleProyecto from "../views/DetalleProyecto";
 import PerfilUsuario from "../views/PerfilUsuario";
 import ErrorPage from "../views/ErrorPage";
