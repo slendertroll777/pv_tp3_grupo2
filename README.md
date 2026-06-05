@@ -4,7 +4,7 @@
 Valentin Angulo: valenan  
 Inti Aragon: inti36  
 Franco Guanactolay: franclyc     
-Santino Tito: slendertroll777  
+Santino Tito: slendertroll777  (No participo en Tp 3 Parte 4-5)
 Chosco Fabricio: fabrippp  
 
 

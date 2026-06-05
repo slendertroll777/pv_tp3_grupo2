@@ -1,8 +1,13 @@
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import Container from "react-bootstrap/Container";
+import { useContext } from "react";
+import { UsuarioContext } from "../context/UsuarioContext";
 
 function PerfilUsuario() {
+
+  const { usuario, actualizarPerfil } = useContext(UsuarioContext);
+
   const usuarios = [
     {
       nombre: "Valentín Angulo",
