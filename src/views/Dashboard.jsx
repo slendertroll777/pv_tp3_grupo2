@@ -7,9 +7,11 @@ import ActivosCard from "../components/activosCard";
 import ClientesCard from "../components/clientesCard";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import React, { useState } from 'react';
 
 function Dashboard() {
-
+    const [usuarios, setUsuarios] = useState([]);
+    const [proyectos, setProyectos] = useState([]);
 
     return (
         <Container className="mt-4" >
@@ -19,8 +21,13 @@ function Dashboard() {
             <Row className="mb-4">
                 <Col>
                     <CardGroup className="d-flex align-items-stretch gap-3" width="50%">
-                        <ActividadCard />
-                        <ActivosCard />
+                        <ActividadCard
+                        usuarios={usuarios}
+                        proyectos={proyectos}
+                        />
+                        <ActivosCard
+                        usuarios={usuarios}
+                        proyectos={proyectos} />
                         <ClientesCard />
                     </CardGroup>
                 </Col>
