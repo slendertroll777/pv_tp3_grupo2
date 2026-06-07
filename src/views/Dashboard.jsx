@@ -25,7 +25,9 @@ function Dashboard() {
                         usuarios={usuarios}
                         proyectos={proyectos}
                         />
-                        <ActivosCard />
+                        <ActivosCard
+                        usuarios={usuarios}
+                        proyectos={proyectos} />
                         <ClientesCard />
                     </CardGroup>
                 </Col>
