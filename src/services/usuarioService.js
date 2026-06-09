@@ -1,6 +1,7 @@
 const usuarios = [
     {
         nombre: "Valentín Angulo",
+        email: "valentin@gmail.com",
         dni: "40111222",
         rol: "Alumno",
         institucion: "Universidad Nacional de Bolivia",
@@ -9,6 +10,7 @@ const usuarios = [
     },
     {
         nombre: "Gustavo Sosa",
+        email: "gustavo@gmail.com",
         dni: "30111222",
         rol: "Docente",
         institucion: "Universidad Nacional de Jujuy",
@@ -17,6 +19,7 @@ const usuarios = [
     },
     {
         nombre: "María Gómez",
+        email: "maria@gmail.com",
         dni: "42111222",
         rol: "Alumno",
         institucion: "Universidad Tecnológica Nacional",
@@ -25,6 +28,7 @@ const usuarios = [
     },
     {
         nombre: "Jose Lopez",
+        email: "jose@gmail.com",
         dni: "43111222",
         rol: "Alumno",
         institucion: "Universidad Nacional de Córdoba",
